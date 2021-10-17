@@ -85,6 +85,33 @@ class LatexToUnicodeFormatterTest {
     }
 
     @Test
+    void testUpperCaseIWithTilcorret() {
+        assertEquals("ã", formatter.format("{\\c{ã}}"));
+    }
+    @Test
+    void testUpperCaseIWithTilerro() {
+        assertEquals("ã", formatter.format("\\\"{a}"));
+    }
+
+    @Test
+    void testUpperCaseIWithcrasecorret() {
+        assertEquals("à", formatter.format("{\\c{à}}"));
+    }
+    @Test
+    void testUpperCaseIWithcraseerro() {
+        assertEquals("à", formatter.format("\\\"{a}"));
+    }
+
+    @Test
+    void testUpperCaseIWithConFlexocorret() {
+        assertEquals("â", formatter.format("{\\c{â}}"));
+    }
+    @Test
+    void testUpperCaseIWithFlexoerro() {
+        assertEquals("â", formatter.format("\\\"{a}"));
+    }
+
+    @Test
     void testPolishName() {
         assertEquals("Łęski", formatter.format("\\L\\k{e}ski"));
     }
